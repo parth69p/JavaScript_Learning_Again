@@ -59,6 +59,9 @@ console.log("Array after Splice", myArr);
 
 
 
+
+// *****************************************************************************
+
 // today we learn 
 
 // 1. push () //used to push the values in array
@@ -68,3 +71,5 @@ console.log("Array after Splice", myArr);
 // 4. slice (StartIndex,EndIndex) // this function is used to extract subArray from the array from the given range of index, it doesn't include last index .
 // 5. splice (StartIndex,EndIndex) // it also used to extract subArray from the array, but its changes the origianl array too, and include last index
 
+//6. join() : this function changes the array into string 
+// can only convert string array into string. 
