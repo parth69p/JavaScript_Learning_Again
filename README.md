@@ -1,2 +1,2 @@
 # JavaScript_Learning
-today going to start Javas
+today going to start JavaScript
