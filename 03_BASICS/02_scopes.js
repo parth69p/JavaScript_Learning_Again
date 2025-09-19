@@ -49,11 +49,11 @@ function addone(num1)
     return num1 + 1;
 }
 
-addtwo(5)// we can not use this here as it is not initialised here.
+// addtwo(5)// we can not use this here as it is not initialised here.
 const addtwo = function(num){
     return num +2
 }// this is kind of expression and we can create funtions like this too
-
+addtwo(5) // it works here
 // **************************HERE MY LEARNING***********************
 
 // 1. scope is basically inside curly braces
