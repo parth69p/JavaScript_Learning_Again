@@ -69,13 +69,13 @@ const users =[
 
 // console.log(tinderUser);
 
-console.log(Object.keys(tinderUser)) // return all names of attributes of object 
-console.log(Object.values(tinderUser))// return all values of the keys 
-console.log(Object.entries(tinderUser))
+// console.log(Object.keys(tinderUser)) // return all names of attributes of object 
+// console.log(Object.values(tinderUser))// return all values of the keys 
+// console.log(Object.entries(tinderUser))
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn'))// return boolean to check that key present in object or not
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'))// return boolean to check that key present in object or not
 
-console.log(tinderUser.toString())
+// console.log(tinderUser.toString())
 //************************************************ */
 
 /*
@@ -87,7 +87,44 @@ Here are my learnig
 4. Oject.keys() // this function is used to check all keys of the object 
 */
 
+// ******************************************************************
+
+// ******************Object Destructuring**********************
+const cource = {
+    courcename: 'js in hindi',
+    price: "999",
+    courceInstructor: "Parth"
+}
+
+// cource.courceInstructor
+
+const {courceInstructor: instructor} = cource// destructuring 
 
 
+// console.log(courceInstructor)
+console.log(instructor)
+
+const nabar = ({company})=>{//it is destructrue from :  const nabar = (props.company})=>{
+
+}
+
+navbar(company = "hitesh" )
 
 
+// ********************************Api *******************************8
+
+
+// {
+//     "name": "Parth",
+//     "courcename" : "js in hindi",
+//     "price" : "free"
+// }
+
+// above data is kind of json data the api returns many of the time
+
+// [
+//     {},
+//     {},
+//     {}
+// ]
+// this is also a json data which is futhere can be used to fetch from api
