@@ -59,3 +59,12 @@ const addtwo = function(num){
 // 1. scope is basically inside curly braces
 // 2. WE JUST don't use 'var' for the varible declartion as it not clear wiht the scope.
 // even if varible is declare inside {} curly braces, it's accessble outside also. that not a good thing
+
+/*3.
+const addtwo = function(num){
+    return num +2
+}// this is kind of expression and we can create funtions like this too
+
+if we declare function like this we can not use it before that declaration part 
+like the calling of that function should after that declaration.
+*/
