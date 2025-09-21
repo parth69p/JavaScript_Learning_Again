@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color:#fff
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-black">
+        <!-- style=" color:blue" -->
+        <h1  id="title"class="heading"> Dom Learning on chai aur code <span style="display:none;">test text</span> </h1>
+        <h2>Lorem, ipsum dolor.</h2>
+        <h2>Lorem, ipsum dolor second.</h2>
+        <h2>Lorem, ipsum dolor hello.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">Four</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+ <!-- console.dir(document) -->  
+  <!-- console.log(document.) -->
+
+ <!-- Collection : is same as array but not an array , need to be converted -->
+
+ <!-- getelementbyId() : this is used to get the whole element by id 
+    -->
+
+    <!-- document.getElementById('heading')
+<h1 id=​"heading" class=​"heading">​ Dom Learning on chai aur code ​</h1>​
+document.getElementById('heading').innerHTML = `<h1>hello Parth</h1>
+`
+'<h1>hello Parth</h1>\n' -->
+
+<!-- 
+1. Today i learn about DOM 
+2. querySelector() : returns the object 
+3. querySelectorAll() : returns the Node list
+4. getElementById() : retuns the object of that id .
+5. getElementByClassName() : returns the HTML Collection. ( which needs to be change in array using 'Array.from()' function)
+
+
+// here  is the example 
+const mydiv = document.querySelectorAll('.mw-heading')
+undefined
+mydiv[0].innerText
+'History'
+mydiv.forEach((h) =>{
+    h.style.color= "red"
+})
+undefined
+mydiv.forEach((h) =>{
+    h.style.color= "blue"
+})
+undefined
+mydiv.forEach((h) =>{
+    h.style.color= "blue",
+        h.style.backgroundColor= "red"
+})
+undefined
+mydiv.forEach((h) =>{
+    h.style.color= "blue",
+        h.style.backgroundColor= "red"'
+})
+
+mydiv.forEach((h) =>{
+    h.style.color= "blue",
+        h.style.backgroundColor= "red";
+    h.innerText = "Parth"
+})
+undefined
+mydiv
+NodeList(57) [div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading3, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading3, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading3, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading3, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading5, div.mw-heading.mw-heading5, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2]
+document.querySelector('.headin')
+null
+document.querySelector('.mw-heading')
+<div class=​"mw-heading mw-heading2" style=​"color:​ blue;​ background-color:​ red;​">​Parth​</div>​
+const firstDiv = document.querySelector('.mw-heading')
+undefined
+firstDiv
+<div class=​"mw-heading mw-heading2" style=​"color:​ blue;​ background-color:​ red;​">​Parth​</div>​
+first.innerText = "hello Parth"
+-->
