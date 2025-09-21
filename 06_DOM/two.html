@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom | Chai aur code</title>
+</head>
+
+<body style="background-color: #212121; color:#fff;">
+
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thrusday</div>
+    </div>
+
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    //   console.log(parent);
+    //   console.log(parent.children);
+    //   console.log(parent.children[0].innerHTML);
+
+
+    //   for(let i=0; i< parent.children.length; i++){
+    //     console.log(parent.children[i].innerHTML);
+
+    //   }
+
+    parent.children[1].style.color = "orange"
+
+    //   console.log(parent.firstElementChild);
+    //   console.log(parent.lastElementChild);
+
+    const dayOne = document.querySelector('.day')
+    //   console.log(dayOne);
+
+    //   console.log(dayOne.parentElement); // accessing the parents 
+    //   console.log(dayOne.nextElementSibling);// accessing the siblings 
+
+
+    console.log("Nodes: ", parent.childNodes) // show all child of the parent : output nodelist (9)
+
+</script>
+
+</html>
+
+<!--  parent property: have the children property which shows all childrens of that parent  -->
+<!--  PROPERTIES OF PARENTS : -->
+<!-- 1. parennt.children -->
+<!-- 2. parent.firstElementChild -->
+<!-- 3. As parent can access the childrens, childrens can also access the parent.
+      as follows 
+      : 'day.parentElement'
+    4. Same for syblings : 'dayOne.nextElementSibling'
+      -->
+<!-- 16:39 : Node List discussion -->
