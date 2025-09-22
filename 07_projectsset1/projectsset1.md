@@ -1,7 +1,7 @@
 # Projects related to DOM
 #
 ## Project 1
-```javacript
+``` javascript
 const bodyRef = document.querySelector('body');
 const buttonsRef = document.querySelectorAll('.button');
 // console.log(buttonsRef)
