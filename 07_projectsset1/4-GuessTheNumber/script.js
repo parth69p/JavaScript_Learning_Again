@@ -35,7 +35,7 @@ function validateGuess(guess) {
   } else {// Valid case
 
     // prevGuess.push(guess); // never used 
-    if (numberGuess ===11) {
+    if (numberGuess ===7) {
         displayGuess(guess)// passing into array
         displayMessage(`Game Over. Random number was ${randomNumber}`)
         endGame()
@@ -65,7 +65,7 @@ function displayGuess(guess) {// also clean the values.
   userInput.value= ''
   guessSlot.innerHTML += `${guess}, `
   numberGuess++;
-  remaining.innerHTML = `${11-numberGuess}`
+  remaining.innerHTML = `${7-numberGuess}`
 }
 
 function displayMessage(message) {
@@ -92,7 +92,7 @@ randomNumber = parseInt(Math.random() * 100 + 1); // generating the number
     prevGuess = '',
     numberGuess = 1,
     guessSlot.innerHTML = ''
-    remaining.innerHTML = `${11 -numberGuess}`;
+    remaining.innerHTML = `${7 -numberGuess}`;
     userInput.removeAttribute('disabled')
     StartOver.removeChild(p)
     displayMessage('')// passing empty to clear the game over message.
