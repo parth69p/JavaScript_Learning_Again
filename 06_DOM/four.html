@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>javaScript</li>
+        <!-- <li></li>
+        <li></li> -->
+    </ul>
+    <button onclick="addLanguage('hello_java')">add</button>
+</body>
+
+<script>
+    function addLanguage(langname){
+       const list_item =  document.createElement('li')
+       list_item.innerHTML = `${langname}`;
+       document.querySelector('.language').appendChild(list_item)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+// good for bigger Approach
+    function addOptiLanguage(langname){
+        const list_item =  document.createElement('li')
+    //    addText = document.createTextNode(langname)
+       list_item.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(list_item)
+    }
+    addOptiLanguage('golang')
+
+    //Edit existing 
+   const seconlang = document.querySelector("li:nth-child(2)")
+    //  seconlang.innerHTML = "Mojo"  // not optimised 
+    console.log(seconlang)
+   const newli= document.createElement('li')
+    newli.textContent = "Mojo" 
+    seconlang.replaceWith(newli) // replace with the the content j
+
+    // edit 
+
+    const firstLang =document.querySelector("li:first-child")
+    firstLang.outerHTML= '<li> TypeScript </li>'
+
+    //remove 
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove() // for removing the object. 
+    
+</script>
+</html>
+
+<!-- ************************** Here are my Learning *********************** -->
+<!-- 
+1. here I learn about editing of Dob using 'querySelector' and the 'createElement'.
+2. for adding : just Create the element and append it to the parent using '.appendChild()' function.
+for eg : line no (18-22) 
+
+3. for Editing : first get the reference of the object and than create new element than replace it with the reference using 'replaceWith()' function.
+for eg : line no (36-41)                 
+
+4. for removing : just get the reference of that object and run the 'remove()' funtion 
+-->
