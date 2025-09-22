@@ -17,8 +17,19 @@
             <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
         </ul>
    </div>
+   <button id="btn">Click Me</button>
 </body>
 <script>
+  document.getElementById("btn").addEventListener("click", function (e) {
+    console.log("Type:", e.type);
+    console.log("Target:", e.target);
+    console.log("CurrentTarget:", e.currentTarget);
+    console.log("ClientX/Y:", e.clientX, e.clientY);
+    console.log("ScreenX/Y:", e.screenX, e.screenY);
+    console.log("Alt:", e.altKey, "Ctrl:", e.ctrlKey, "Shift:", e.shiftKey);
+  });
+
+
 // document.getElementById('owl').onclick = ()=>{
 //     alert('owl clicked')
 //     }
@@ -27,44 +38,58 @@
 // jQuery - on 
 
 // Best Approach
-// document.getElementById('images').addEventListener('click',(e)=>{
+document.getElementById('images').addEventListener('click',(e)=>{
     
-//     console.log("clicked inside the ul")
+    console.log("clicked inside the ul")
 
-// },true)// need to write false. as it is also default 
-// document.getElementById('owl').addEventListener('click',(e)=>{
+},false)// need to write false. as it is also default 
+document.getElementById('owl').addEventListener('click',(e)=>{
     
-//     console.log("clicked owl")
-//     e.stopPropagation() // it will not go to another element (no bubbling)
-// },false)// capturing bubbling event if false.
+    console.log("clicked owl")
+    // e.stopPropagation() // it will not go to another element (no bubbling)
+},false)// capturing bubbling event if false.
 
 // document.getElementById('google').addEventListener('click',(e)=>{
-//     e.preventDefault()
+//     e.preventDefault() // will not let link to redirect
 //     e.stopPropagation(); // no bubbling 
 //     console.log("google Cliced")
 // },false);
 
 //*********************deleting image on user click**********************************************f
 
-document.querySelector('#images').addEventListener('click',(e)=>{
-console.log(e.target.parentNode) // getting exact
+// document.querySelector('#images').addEventListener('click',(e)=>{
+// console.log(e.target.parentNode) // getting exact parent of image which is <li>
+// console.log(e.target.tagName)
+// if(e.target.tagName ==="IMG"){
+//     console.log(e.target.id)
+// let removeIt = e.target.parentNode
+// // removeIt.remove()
+// removeIt.parentNode.removeChild(removeIt) // removing child. // above and this both are same .
+
+// }
+
+
+// },false)// false for event propogation.
+
+
+// again deleting User ***************
+document.getElementById('images').addEventListener('click',(e)=>{
+const removeli = e.target.parentNode;
+console.log(e.target)
 console.log(e.target.tagName)
-if(e.target.tagName ==="IMG"){
-    console.log(e.target.id)
-let removeIt = e.target.parentNode
-// removeIt.remove()
-removeIt.parentNode.removeChild(removeIt) // removing child. // above and this both are same .
-
+if(e.target.tagName == 'IMG'){
+console.log(e.target.parentNode)
+// console.log(e.target.tagName)
+removeli.remove()
+// removeli.parentNode.removeChild(removeli)
 }
-
-
-},false)// false for event propogation.
+})
 
 </script>
 </html>
 
 
-<!--  here are my learning  -->
+<!--**************************  here are my learning ********************************* -->
 <!--  java scipt all events runs sequencely  -->
   <!-- Avoid onclick() in java script. -->
 <!--  -->
@@ -74,7 +99,7 @@ removeIt.parentNode.removeChild(removeIt) // removing child. // above and this b
  <!-- NEED TO LEARN properties of that object
   1. type 
   2. timestamp  
-  3. defaultPrevented
+  3. defaultPrevented // preventDefault()
   4. target
    5.toElement 
    6. srcElement (imp)
@@ -85,7 +110,9 @@ removeIt.parentNode.removeChild(removeIt) // removing child. // above and this b
 
    <!--  Event listener by defaluter capture bubbling 
      2. if value true : it will work from top to bottom(in action listener)
-     
+     3. preventDefault() : this function in used to stop the execution of the next process.
+    4. Event Propagation → The process of how an event travels through the DOM in phases: capturing → target → bubbling.
 
-     3. deleting part need to be done again 
+    5. Event Bubbling → A part of propagation where the event starts at the target element and then moves upward to its parent elements.
+     6. . deleting part need to be done again 
      -->
