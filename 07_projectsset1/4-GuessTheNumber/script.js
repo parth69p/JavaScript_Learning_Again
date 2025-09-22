@@ -3,7 +3,7 @@ let randomNumber = parseInt(Math.random() * 100 + 1); // generating the number
 const submit = document.querySelector("#subt");
 const userInput = document.querySelector(".guessField");
 const guessSlot = document.querySelector(".guesses");
-const lastResult = document.querySelector(".lastResult");
+const remaining = document.querySelector(".lastResult");
 const lowOrHi = document.querySelector(".lowOrHi");
 const StartOver = document.querySelector(".resultParas");
 
@@ -15,7 +15,7 @@ let numberGuess = 1;
 let playGame = true;
 
 if (playGame) {
-  submit.addEventListener("click", function (e) {
+  submit.addEventListener("click", function (e) { // event on click
     e.preventDefault(); // form value don't go to server
     const guess = parseInt(userInput.value);
     // console.log(guess);
@@ -32,14 +32,15 @@ function validateGuess(guess) {
     alert("Please enter a number more than 1");
   } else if (guess > 100) {
     alert("Please enter a number less than 100");
-  } else {
+  } else {// Valid case
+
     // prevGuess.push(guess); // never used 
     if (numberGuess ===11) {
         displayGuess(guess)// passing into array
         displayMessage(`Game Over. Random number was ${randomNumber}`)
         endGame()
     }else{
-        displayGuess(guess)// passing into array of guess
+        displayGuess(guess)// passing into array of guess // array not Used just the concatination is done on run time 
         checkGuess(guess)// checking the guess
     }
   }
@@ -60,11 +61,11 @@ function checkGuess(guess) {
 
 function displayGuess(guess) {// also clean the values.
   // update array of guesses
-  console.log(typeof guess);
+  // console.log(typeof guess); // just for checking the Value
   userInput.value= ''
   guessSlot.innerHTML += `${guess}, `
   numberGuess++;
-  lastResult.innerHTML = `${11-numberGuess}`
+  remaining.innerHTML = `${11-numberGuess}`
 }
 
 function displayMessage(message) {
@@ -91,7 +92,7 @@ randomNumber = parseInt(Math.random() * 100 + 1); // generating the number
     prevGuess = '',
     numberGuess = 1,
     guessSlot.innerHTML = ''
-    lastResult.innerHTML = `${11 -numberGuess}`;
+    remaining.innerHTML = `${11 -numberGuess}`;
     userInput.removeAttribute('disabled')
     StartOver.removeChild(p)
     displayMessage('')// passing empty to clear the game over message.
