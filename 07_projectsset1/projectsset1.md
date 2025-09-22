@@ -2,22 +2,21 @@
 #
 ## Project 1
 ```javacript
-consol.log("Parth")
-const bodyRef = document.querySelector('body')
-const buttonsRef = document.querySelectorAll('.button')
+const bodyRef = document.querySelector('body');
+const buttonsRef = document.querySelectorAll('.button');
 // console.log(buttonsRef)
 
-buttonsRef.forEach((button)=>{
+buttonsRef.forEach((button) => {
   console.log(button);
-  button.addEventListener('click', function(e){
-    console.log(e)
-    console.log(e.target)
-    if(e.target.id){
-      bodyRef.style.backgroundColor= e.target.id
+  button.addEventListener('click', function (e) {
+    console.log(e);
+    console.log(e.target);
+    if (e.target.id) {
+      bodyRef.style.backgroundColor = e.target.id;
     }
-  })
-
+  });
 });
+
 ```
 ## Project 2
 ``` javascript
@@ -60,4 +59,19 @@ form.addEventListener('submit',(e)=>{
 
   
 })
+```
+## Project 3
+```javascript
+ const clock = document.getElementById('clock')
+//  const clock = document.querySelector('#clock')
+
+// let date = new Date()
+
+setInterval(function(){
+ let date = new Date()
+ clock.innerHTML = date.toLocaleTimeString();
+},1000)
+
+//  setInterval () : function is used to run after a time a we pass automatically.
+// This function is used to perform perticular task after some interval of time automatically.
 ```
