@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayParth = function(){
+        console.log("Parth");
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    const changeMe = setTimeout(changeText, 2000)
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED")
+    })
+</script>
+</html>
+<!-- ************************************************ here are my learning************************************************** -->
+<!--
+
+
+1. setTimeOut(handler,time): this function is used to run the code execution after a perticular time period according to time we passed 
+* this function accept two arguments first one is 'Handler/CallBack_Function' and second is time .
+* this function execute only one time.
+
+
+****************************************************************************************************************************************************
+
+
+2. clearTimeOut(RefOfSetTimeout): this function is used to clear the time out or stop the timeout before the eqecution
+
+* the refernce of setTimeout function need to passed inside this. 
+*for passing value, need to store the 'setTimeout()' function.
+
+-->
