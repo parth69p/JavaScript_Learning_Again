@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+      background-color: #212121;
+      font-family: Arial, sans-serif;
+       display: flexbox;
+       color:white;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #2c2c2c;
+      color: white;
+      border: 2px solid #444;
+      border-radius: 12px;
+      margin: 20px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+    }
+
+    .card h1 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #00bcd4;
+    }
+
+    .card-image img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      margin-bottom: 15px;
+      border: 3px solid #00bcd4;
+    }
+
+    .card-body {
+      font-size: 16px;
+      color: #ddd;
+    }
+    </style>
+</head>
+<body style="background-color: #212121;">
+    <p>
+        <pre>
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</pre></p>
+<hr>
+<!-- Adding the Image to Card From the Api -->
+ <div class="card" style="border: 2px solid white; margin:20px; padding: 15px;">
+    <h1>Card header</h1>
+    <div class="card-image"></div>
+    <div class="card-body">Followers :</div>
+ </div>
+</body>
+
+<script>
+    const requestUrl = 'https://api.github.com/users/parth69p'
+   const xhr = new XMLHttpRequest()
+   xhr.open('GET',requestUrl);
+    let imageUrl;
+    let child;
+   xhr.onreadystatechange =function (){
+    console.log(xhr.readyState)
+    if(xhr.readyState=== 4){
+        const data = JSON.parse(this.responseText);
+        // console.log(data.followerrs) // can not used directly without  JSON parse  as data is in string. earlier.
+        console.log(data)
+        imageUrl = data.avatar_url
+        console.log(imageUrl);
+        
+        Follow= data.followers;
+    // 
+    }
+    document.querySelector('.card-image').innerHTML = `<img src=${imageUrl}>`;
+    textnode=  document.createTextNode(` ${Follow}`)
+    document.querySelector('.card-body').appendChild(textnode)// done
+    // document.querySelector('.card-body').innerHTML = `<p>followers : ${Follow}`
+   }
+
+//    console.lgo() : it is a debuggin tool.
+   xhr.send();
+</script>
+
+</html>
+
+<!--  Here are my Learning  -->
+
+<!-- XMLHttpRequest() : this is used to request the api's 
+
+1. xhr.open() : here xhr is object of 'XMLHttpRequest()' and open funciton need to called to run the api's 
+* In this function we pass 'open('GET',ApiUrl)
+
+2. xhr.send(): this function needs to be run for reterieving data or sending the data
+
+3. xhr.responseText : this property returns all data from the api which is in string format need to be converted
+
+4. Json.parse() : we use this funtion to parse the data of 'responseText' to json format so that we can use it like and object
+
+5. xhr.onreadystatechange : this property continues watch the state of Api and accepts a functions which need to be executed on any state . 
