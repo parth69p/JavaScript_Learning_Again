@@ -30,4 +30,12 @@ Abstractions
 Encapsulations
 Inheritance
 Polymorphism
+
 ```
+## 5 Prototypes.
+
+<div align="center">
+  <img src="image.png" alt="OOP" width="400">
+  <p><strong>Figure:</strong> OOP in JavaScript</p>
+</div>
+
