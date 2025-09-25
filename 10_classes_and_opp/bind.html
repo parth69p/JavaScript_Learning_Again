@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:3000"
+
+            // requirement 
+
+            // document.querySelector('button').addEventListener('click',()=>{
+            //     this.handleClick()
+            //     console.log(this);
+                
+            // })
+
+            // Alternative Solution
+            document.querySelector('button').addEventListener('click',this.handleClick.bind(this))
+
+            //
+
+            // console.log(this);
+            
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this);
+            console.log(this.server);
+        }
+    }
+    const app = new React()
+
+
+
+
+    //*************************** Here Are my Learning ****************************
+    // bind() function internally creates a new function with the 'this' object of his class reference so that the function we are calling use 'this' of our reference not his own context.
+    // this function  we used when we need to pass the reference of our object externally and we want that function to use forcefully 'this' as our reference not his own.
+</script>
+</html>
