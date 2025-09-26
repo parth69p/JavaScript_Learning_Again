@@ -84,7 +84,7 @@
         const data = JSON.parse(this.responseText);
         // console.log(data.followerrs) // can not used directly without  JSON parse  as data is in string. earlier.
         console.log(data)
-        imageUrl = data.avatar_url
+        imageUrl = data.avatar_url // profile_image url of github.
         console.log(imageUrl);
         
         Follow= data.followers;
